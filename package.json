@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/pretended/vela-api-ddd-hexagonal/issues"
   },
-  "homepage": "https://github.com/pretended/vela-api-ddd-hexagonal#readme"
+  "homepage": "https://github.com/pretended/vela-api-ddd-hexagonal#readme",
+  "dependencies": {
+    "@sentry/node": "^7.54.0",
+    "diod": "^2.0.0",
+    "mongoose": "^7.2.2"
+  }
 }
