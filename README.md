@@ -1,1 +1,1 @@
-# Intento DDD con Arquitectura hexagonal en Typescript
+# POC Vela API DDD y Arquitectura hexagonal con un bus de eventos
