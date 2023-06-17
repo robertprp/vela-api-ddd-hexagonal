@@ -1,7 +1,8 @@
 import {DomainMessage} from './DomainMessage'
 import {IdValueObject} from './valueObjects/IdValueObject'
+import {ObjectId} from "../../../index";
 
-type AggregateGenericType<T> = T extends { _id: string } ? T : never
+type AggregateGenericType<T> = T extends { _id: ObjectId } ? T : never
 export abstract class AggregateRoot<AggregateGenericType> {
     protected readonly _id: IdValueObject
 

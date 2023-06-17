@@ -8,19 +8,19 @@ import {EventBus} from "../../shared/domain/EventBus";
 @registerUseCase()
 export class BoatCreateUseCase extends DomainUseCase {
     constructor (
-        private userRepository: BoatRepository,
+        private boatRepository: BoatRepository,
         private eventBus: EventBus) {
         super()
     }
 
     async run (boat: IBoat): Promise<void> {
         const boatId = new IdValueObject(boat._id)
-        const existingBOat = await this.userRepository.findById(boatId)
+        const existingBOat = await this.boatRepository.findById(boatId)
         if (existingBOat) {
             throw new Error('Boat already exists')
         }
         const newBoat = Boat.create(boat)
-        await this.userRepository.save(newBoat)
+        await this.boatRepository.save(newBoat)
         await this.eventBus.publishMany(newBoat.pullDomainEvents())
     }
 }
