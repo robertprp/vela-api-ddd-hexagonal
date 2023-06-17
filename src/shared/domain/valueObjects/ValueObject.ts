@@ -5,6 +5,7 @@ export abstract class ValueObject<T> {
         this._value = data
     }
 
+    // @ts-ignore
     get value (): T {
         return this._value
     }

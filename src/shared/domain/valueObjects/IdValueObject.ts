@@ -1,12 +1,13 @@
 import mongoose from 'mongoose'
 import {ValueObject} from './ValueObject'
+import {ObjectId} from "../../../../index";
 
-export class IdValueObject extends ValueObject<string> {
+export class IdValueObject extends ValueObject<ObjectId> {
     static generate (): IdValueObject {
         return new IdValueObject(new mongoose.Types.ObjectId().toString())
     }
 
-    constructor (value: string) {
+    constructor (value: ObjectId) {
         super(value.toString())
         this.ensureIsValid()
     }

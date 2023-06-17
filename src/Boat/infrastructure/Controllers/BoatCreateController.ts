@@ -1,24 +1,24 @@
 import { VelaController } from "../../../shared/infrastructure/Controllers/VelaController";
-import {UserCreateUseCase} from "../../application/UserCreateUseCase";
-import {IUser} from "../../domain/User";
+import {BoatCreateUseCase} from "../../application/BoatCreateUseCase";
+import {IBoat} from "../../domain/Boat";
 
 
 // @ts-ignore
 @registerController()
-export class UsersCreateController extends VelaController {
-    path = '/users'
+export class BoatCreateController extends VelaController {
+    path = '/boats'
     method = 'POST'
 
     constructor(
-        private readonly createUser: UserCreateUseCase
+        private readonly createBoat: BoatCreateUseCase
     ) {
         super()
         // TODO: Request validation here
     }
 
     async run (request: Request, response: Response): Promise<void> {
-        const data = request.body as unknown as IUser
-        const user = await this.createUser.run(data)
+        const boatData = request.body as unknown as IBoat
+        const user = await this.createBoat.run(boatData)
 
         // TODO: Send http response data here
     }

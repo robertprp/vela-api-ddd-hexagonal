@@ -3,9 +3,10 @@ import {EmailValueObject} from "../../shared/domain/valueObjects/EmailValueObjec
 import {StringValueObject} from "../../shared/domain/valueObjects/StringValueObject";
 import {IdValueObject} from "../../shared/domain/valueObjects/IdValueObject";
 import {UserCreatedEvent} from "./Events/UserCreatedEvent";
+import {ObjectId} from "../../../index";
 
 export interface IUser {
-    _id: string;
+    _id: ObjectId;
     name: string;
     email: string;
 }
